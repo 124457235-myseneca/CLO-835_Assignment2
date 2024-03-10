@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-pod
+  labels:
+    app: employee
+    env: Assignment2
+    object: pod
+spec:
+  containers:
+  - image: 876560225863.dkr.ecr.us-east-1.amazonaws.com/ecr_assignment2:my_app_v0.1
+    name: app-pod
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: password
+    - name: DBHOST
+      value: "10.244.0.6"
+    - name: DBPORT
+      value: "3306"
+    - name: DBUSER
+      value: "root"
+    - name: DATABASE
+      value: "employees"
+    - name: DBPWD
+      value: "password"
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+    
