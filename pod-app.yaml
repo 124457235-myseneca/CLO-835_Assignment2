@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: app-pod
+  namespace: application
   labels:
     app: employee
     env: Assignment2
@@ -14,7 +15,7 @@ spec:
     - name: MYSQL_ROOT_PASSWORD
       value: password
     - name: DBHOST
-      value: "10.244.0.6"
+      value: "10.244.0.21"
     - name: DBPORT
       value: "3306"
     - name: DBUSER
