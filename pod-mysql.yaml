@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql-pod
+  labels:
+    creation_method: manual
+    env: Assignment2
+    object: pod
+spec:
+  containers:
+  - image: mysql
+    name: mysql-pod
+    ports:
+    - containerPort: 3006
+      protocol: TCP
