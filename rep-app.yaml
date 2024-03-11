@@ -4,28 +4,28 @@ metadata:
   name: employee-app
   namespace: application
   labels:
-    app: employee
+    app: employees
 spec:
   replicas: 3
   selector:
    matchLabels:
-    app: employee
+    app: employees
   template:
     metadata:
       name: employee-app
       labels:
-        app: employee
+        app: employees
         env: Assignment2
         object: replicaset
     spec:
       containers:
         - name: app-rep
-          image: 876560225863.dkr.ecr.us-east-1.amazonaws.com/ecr_assignment2:my_app_v0.1
+          image: 876560225863.dkr.ecr.us-east-1.amazonaws.com/ecr_assignment2:my_app_v0.2
           env:
           - name: MYSQL_ROOT_PASSWORD
             value: password
           - name: DBHOST
-            value: "10.244.0.30"
+            value: 10.244.0.17
           - name: DBPORT
             value: "3306"
           - name: DBUSER
